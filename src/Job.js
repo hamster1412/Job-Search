@@ -18,10 +18,10 @@ export default function Job({ job }) {
             <Card.Subtitle className="text-muted mb-2">
               {new Date(job.create_at).toLocaleDateString()}
             </Card.Subtitle>
-            <Badge variant="secondary" className="mr-2">
+            <Badge variant="danger" className="mr-2">
               {job.type}
             </Badge>
-            <Badge variant="secondary">{job.location}</Badge>
+            <Badge variant="danger">{job.location}</Badge>
             <div style={{ wordBreak: "break-all" }}>
               <ReactMarkdown children={job.how_to_apply} />
             </div>
@@ -36,7 +36,7 @@ export default function Job({ job }) {
         <Card.Text>
           <Button
             onClick={() => setOpen((prevOpen) => !prevOpen)}
-            variant="primary"
+            variant="dark"
           >
             {" "}
             {open ? "Hide Details" : "View Details"}
