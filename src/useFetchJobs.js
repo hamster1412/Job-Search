@@ -8,8 +8,10 @@ const ACTIONS = {
   UPDATE_UHAS_NEXT_PAGE: "update-has-next-page",
 };
 
-const BASE_URL =
+const BASE_URL_ =
   "https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json";
+
+const BASE_URL ="https://indeed-indeed.p.rapidapi.com/apigetjobs";
 
 function reducer(state, action) {
     // eslint-disable-next-line
@@ -49,6 +51,7 @@ export default function useFetchJobs(params, page) {
         dispatch({ type: ACTIONS.ERROR, payload: { error: e } });
       });
     const cancelToken2 = axios.CancelToken.source();
+
     axios
       .get(BASE_URL, {
         cancelToken: cancelToken2.token,
